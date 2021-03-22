@@ -26,7 +26,9 @@ public class SubscriptionReportGenerator {
 
     private Map<String, List<String>> getMapOfMembersByColor()  {
         return getCategorizedList().stream()
-                .collect(groupingBy())
+                .collect(groupingBy(CategorizeGymMembers::getCategory,
+                        mapping(CategorizeGymMembers::getSubscription,
+                                mapping(subscription -> subscription.getGymMember().getName())))
 
     }
 

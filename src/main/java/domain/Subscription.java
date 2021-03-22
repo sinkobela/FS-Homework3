@@ -38,6 +38,10 @@ public class Subscription {
         this.totalTime = this.totalTime.plus(timeToAdd);
     }
 
+    public String getGymMemberName() {
+        return getGymMember().getName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
